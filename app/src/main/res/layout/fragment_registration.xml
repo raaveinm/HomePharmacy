@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.RegistrationFragment"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="80dp"
+        android:text="@string/registration"
+        android:gravity="center"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editLoginText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="40dp"
+        android:autofillHints="login"
+        android:hint="@string/username"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/background_field"
+        android:inputType="text"
+        tools:ignore="LabelFor,MissingPrefix" />
+
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="80dp"
+        android:autofillHints="numberPassword"
+        android:hint="@string/password"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/background_field"
+        android:inputType="numberPassword"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="80dp"
+        android:autofillHints="numberPassword"
+        android:hint="@string/confirm"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/background_field"
+        android:inputType="numberPassword"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginVertical="18dp"
+        android:text="@string/letsgo"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:background="@drawable/background_field"
+        android:enabled="false"/>
+
+</LinearLayout>

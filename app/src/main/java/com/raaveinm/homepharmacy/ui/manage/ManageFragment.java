@@ -20,10 +20,7 @@ private FragmentNotificationsBinding binding;
             Bundle savedInstanceState
     ) {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.textNotifications;
-        return root;
+        return binding.getRoot();
     }
 
     @Override public void onDestroyView() { super.onDestroyView(); binding = null; }

@@ -16,4 +16,9 @@
         android:icon="@drawable/baseline_architecture_24"
         android:title="@string/title_notifications"/>
 
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/profile"/>
+
 </menu>

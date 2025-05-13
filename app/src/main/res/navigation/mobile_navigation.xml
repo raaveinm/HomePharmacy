@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.raaveinm.homepharmacy.ui.edit.EditFragment"
+        android:name="com.raaveinm.homepharmacy.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.raaveinm.homepharmacy.ui.view.ViewFragment"
+        android:name="com.raaveinm.homepharmacy.ui.edit.EditFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
@@ -22,4 +22,28 @@
         android:name="com.raaveinm.homepharmacy.ui.manage.ManageFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.raaveinm.homepharmacy.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.raaveinm.homepharmacy.ui.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.raaveinm.homepharmacy.ui.Registration"
+        android:label="@string/registration"
+        tools:layout="@layout/fragment_registration">
+
+    </fragment>
+
+
 </navigation>

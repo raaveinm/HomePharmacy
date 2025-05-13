@@ -3,4 +3,13 @@
     <string name="title_home">edit</string>
     <string name="title_dashboard">view</string>
     <string name="title_notifications">manage</string>
+    <string name="profile">profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="registration">registration</string>
+    <string name="username">username</string>
+    <string name="password">password (4 digits)</string>
+    <string name="confirm">confirm password</string>
+    <string name="letsgo">create an account</string>
+    <string name="password_mismatch">passwords are mismatching</string>
+    <string name="login">login</string>
 </resources>

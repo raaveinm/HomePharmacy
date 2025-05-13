@@ -9,14 +9,14 @@ import android.widget.TextView;
 import com.raaveinm.homepharmacy.R;
 import com.raaveinm.homepharmacy.data.Item;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private List<Item> itemList;
+    private List<Item> itemList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -32,15 +32,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-        Item item = itemList.get(position);
-        holder.textViewItemName.setText(item.itemName);
-        holder.textViewCompanyName.setText(item.companyName);
-        holder.textViewItemQuantity.setText(String.valueOf(item.itemQuantity));
-        holder.textViewItemPrice.setText(String.valueOf(item.itemPrice));
+        if (itemList != null && position >= 0 && position < itemList.size()) {
+            Item item = itemList.get(position);
+            holder.textViewItemName.setText(item.itemName);
+            holder.textViewCompanyName.setText(item.companyName);
+            holder.textViewItemQuantity.setText(String.valueOf(item.itemQuantity));
+            holder.textViewItemPrice.setText(String.valueOf(item.itemPrice));
+        }
     }
 
     @Override
-    public int getItemCount() { return itemList.size(); }
+    public int getItemCount() { return itemList != null ? itemList.size() : 0; }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewItemName = itemView.findViewById(R.id.textViewItemName);
@@ -52,9 +54,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void dataChanged(List<Item> itemList) {
-        this.itemList = itemList;
-        itemList.addAll(Collections.unmodifiableList(itemList));
+    public void dataChanged(List<Item> newItemList) {
+        this.itemList = (newItemList == null) ? new ArrayList<>() : new ArrayList<>(newItemList);
         notifyDataSetChanged();
     }
 }

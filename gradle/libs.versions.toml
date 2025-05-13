@@ -11,6 +11,7 @@ lifecycleViewmodelKtx = "2.9.0"
 navigationFragment = "2.9.0"
 navigationUi = "2.9.0"
 roomRuntime = "2.7.1"
+activity = "1.10.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -27,6 +28,7 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRun
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "roomRuntime" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "roomRuntime" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
