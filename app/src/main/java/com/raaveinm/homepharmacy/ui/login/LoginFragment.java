@@ -1,5 +1,6 @@
 package com.raaveinm.homepharmacy.ui.login;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -32,38 +33,35 @@ public class LoginFragment extends Fragment {
     ) {
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
-    private boolean success;
+
+    @SuppressLint("SetTextI18n")
     @Override
     public void onResume() {
         super.onResume();
-        success = false;
-
         ManageSharedPreferences loginData = new ManageSharedPreferences(requireContext());
+        TextView passwordText = requireView().findViewById(R.id.editTextNumberPasswordLogin);
+        TextView login = requireView().findViewById(R.id.submitPassword);
+        TextView welcome = requireView().findViewById(R.id.welcomeText);
 
-        TextView loginText = requireView().findViewById(R.id.editLoginText);
-        TextView passwordText = requireView().findViewById(R.id.editTextNumberPassword);
-        TextView confirmText = requireView().findViewById(R.id.editTextConfirmPassword);
-        TextView letsGo = requireView().findViewById(R.id.startButton);
+        welcome.setText(getString(R.string.welcome) + " " + loginData.getUsername());
 
-        letsGo.setEnabled(!loginText.getText().toString().isEmpty() &&
-                !passwordText.getText().toString().isEmpty() &&
-                !confirmText.getText().toString().isEmpty());
+        passwordText.setOnFocusChangeListener((v, hasFocus) -> login.setEnabled(true));
 
-        letsGo.setOnClickListener(view -> {
-            if (passwordText.equals(confirmText)) {
-                loginData.setUsername(loginText.getText().toString());
-                loginData.changePassword(Integer.parseInt(passwordText.getText().toString()));
-                success = true;
+        login.setOnClickListener(view -> {
+            if (loginData.getPassword() == Integer.parseInt(passwordText.getText().toString())) {
+                loginData.loggedIn();
+                Intent intent = new Intent(requireContext(), MainActivity.class);
+
+                intent.setFlags(
+                        Intent.FLAG_ACTIVITY_NEW_TASK |
+                                Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                Intent.FLAG_ACTIVITY_CLEAR_TOP
+                );
+
+                startActivity(intent);
             } else {
-                Snackbar.make(requireView(), R.string.password_mismatch, Snackbar.LENGTH_SHORT).show();
-                success = false;
+                Snackbar.make(requireView(), R.string.wrong_password, Snackbar.LENGTH_SHORT).show();
             }
         });
-
-        if (success) {
-            Intent intent = new Intent(requireContext(), MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-        }
     }
 }

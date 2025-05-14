@@ -69,7 +69,8 @@
         android:gravity="center"
         android:layout_marginVertical="18dp"
         android:text="@string/letsgo"
-        android:textColor="@color/design_default_color_on_secondary"
+
+        android:textColor="@color/purple_200"
         android:background="@drawable/background_field"
         android:enabled="false"/>
 

@@ -10,6 +10,8 @@
     <string name="password">password (4 digits)</string>
     <string name="confirm">confirm password</string>
     <string name="letsgo">create an account</string>
-    <string name="password_mismatch">passwords are mismatching</string>
+    <string name="password_mismatch">passwords is unacceptable</string>
     <string name="login">login</string>
+    <string name="wrong_password">wrong password</string>
+    <string name="welcome">"welcome back, "</string>
 </resources>

@@ -35,4 +35,20 @@ public class ManageSharedPreferences {
         editor.clear();
         editor.apply();
     }
+
+    public void loggedIn () {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("logged_in", true);
+        editor.apply();
+    }
+
+    public void loggedOut () {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("logged_in", false);
+        editor.apply();
+    }
+
+    public boolean isLoggedIn () {
+        return (sharedPreferences.getBoolean("logged_in", false));
+    }
 }

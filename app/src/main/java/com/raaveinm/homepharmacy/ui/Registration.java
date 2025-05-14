@@ -39,14 +39,12 @@ public class Registration extends AppCompatActivity {
 
         if (loginData.getUsername().equals("ERR_USER_DOES_NOT_EXIST")) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_host_fragment_activity_main, new RegistrationFragment())
+                    .replace(R.id.registration_fragment_container, new RegistrationFragment())
                     .commit();
-            getSupportFragmentManager().executePendingTransactions();
         } else {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_host_fragment_activity_main, new LoginFragment())
+                    .replace(R.id.registration_fragment_container, new LoginFragment())
                     .commit();
-            getSupportFragmentManager().executePendingTransactions();
         }
     }
 }

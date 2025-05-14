@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.login.LoginFragment"
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/welcomeText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="60dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="80dp"
+        android:gravity="center"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/editTextNumberPasswordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="80dp"
+        android:autofillHints="numberPassword"
+        android:hint="@string/password"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/background_field"
+        android:inputType="numberPassword"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/submitPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginVertical="18dp"
+        android:text="@string/login"
+        android:textColor="@color/purple_200"
+        android:background="@drawable/background_field"
+        android:enabled="false"/>
+
+</LinearLayout>

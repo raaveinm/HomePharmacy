@@ -37,13 +37,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Intent intent = new Intent(this, Registration.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        ManageSharedPreferences loginData = new ManageSharedPreferences(this);
+
+        if (!loginData.isLoggedIn()) {
+            intent.setFlags(
+                    Intent.FLAG_ACTIVITY_NEW_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                    Intent.FLAG_ACTIVITY_CLEAR_TOP
+            );
+            startActivity(intent);
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Objects.requireNonNull(getSupportActionBar()).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        ManageSharedPreferences loginData = new ManageSharedPreferences(this);
+        loginData.loggedOut();
     }
 }
