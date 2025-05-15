@@ -17,6 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private List<Item> itemList = new ArrayList<>();
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener { void onItemClick(Item item); }
+    public void setOnItemClickListener(OnItemClickListener listener) { this.listener = listener; }
 
     @NonNull
     @Override
@@ -38,6 +42,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.textViewCompanyName.setText(item.companyName);
             holder.textViewItemQuantity.setText(String.valueOf(item.itemQuantity));
             holder.textViewItemPrice.setText(String.valueOf(item.itemPrice));
+
+            holder.itemView.setOnClickListener(v -> {
+                if (listener != null) listener.onItemClick(item);
+            });
         }
     }
 
@@ -57,5 +65,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void dataChanged(List<Item> newItemList) {
         this.itemList = (newItemList == null) ? new ArrayList<>() : new ArrayList<>(newItemList);
         notifyDataSetChanged();
+    }
+
+    public Item getItemAt(int position) {
+        if (itemList != null && position >= 0 && position < itemList.size()) {
+            return itemList.get(position);
+        }
+        return null;
     }
 }

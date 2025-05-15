@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.raaveinm.homepharmacy.ui.edit.EditFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.raaveinm.homepharmacy.ui.manage.ManageFragment"
         android:label="@string/title_notifications"
@@ -44,6 +38,4 @@
         tools:layout="@layout/fragment_registration">
 
     </fragment>
-
-
 </navigation>
