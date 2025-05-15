@@ -10,9 +10,18 @@
     <string name="password">password (4 digits)</string>
     <string name="confirm">confirm password</string>
     <string name="letsgo">create an account</string>
-    <string name="password_mismatch">passwords is unacceptable</string>
+    <string name="password_mismatch">passwords mismatching</string>
     <string name="login">login</string>
     <string name="wrong_password">wrong password</string>
     <string name="welcome">"welcome back, "</string>
-    <string name="fab">fab</string>
+    <string name="fab" translatable="false">fab</string>
+    <string name="about_me">"Hello there "</string>
+    <string name="old_password">old password</string>
+    <string name="password_changed">password updated successfully</string>
+    <string name="log_out_confirm_message">
+        This action will delete all data and you will need to register again. Do you want to proceed?
+    </string>
+    <string name="no">no</string>
+    <string name="log_out_confirm_title">are you sure?</string>
+    <string name="yes">yes</string>
 </resources>

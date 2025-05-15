@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Intent intent = new Intent(this, Registration.class);
         ManageSharedPreferences loginData = new ManageSharedPreferences(this);
 
         if (!loginData.isLoggedIn()) {
+            Intent intent = new Intent(this, Registration.class);
             intent.setFlags(
                     Intent.FLAG_ACTIVITY_NEW_TASK |
                     Intent.FLAG_ACTIVITY_CLEAR_TASK |

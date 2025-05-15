@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Домашняя аптека</string>
+    <string name="title_home">редакция</string>
+    <string name="title_dashboard">просмотр</string>
+    <string name="title_notifications">управление</string>
+    <string name="profile">профиль</string>
+    <string name="hello_blank_fragment">привет из темноты</string>
+    <string name="registration">регистрация</string>
+    <string name="username">имя пользователя</string>
+    <string name="password">пароль (4 цифры)</string>
+    <string name="confirm">подтвердите пароль</string>
+    <string name="letsgo">создать аккаунт</string>
+    <string name="password_mismatch">пароли не свопадают</string>
+    <string name="login">войти</string>
+    <string name="wrong_password">неверный пароль</string>
+    <string name="welcome">"с возращением, "</string>
+    <string name="about_me">"Рад снова видеть, "</string>
+    <string name="old_password">старый пароль</string>
+    <string name="password_changed">пароль успешно обновлен</string>
+    <string name="log_out_confirm_message">это действие удалит все данные и вам прийдется регистрироваться по новой. Вы уверены, что хотите продолжить?</string>
+    <string name="no">нет</string>
+    <string name="log_out_confirm_title">Вы уверены?</string>
+    <string name="yes">дап</string>
+</resources>

@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment"
+    android:orientation="vertical"
+    android:gravity="center|top">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="210dp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="80dp"
+        android:gravity="center"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/changePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change password"
+        android:layout_marginTop="35dp"/>
+
+    <LinearLayout
+        android:id="@+id/changePasswordLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/editTextNumberPassOld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_field"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/old_password"
+            android:inputType="numberPassword"
+            android:minHeight="40dp" />
+
+        <EditText
+            android:id="@+id/editTextNumberPassNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_field"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/password"
+            android:inputType="numberPassword"
+            android:minHeight="40dp" />
+
+        <EditText
+            android:id="@+id/editTextNumberPassConf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_field"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/confirm"
+            android:inputType="numberPassword"
+            android:minHeight="40dp" />
+
+        <Button
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="log out"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/background_field"
+        android:textColor="@color/purple_200"/>
+
+
+
+
+</LinearLayout>
